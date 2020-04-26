@@ -5,6 +5,7 @@ import Friends from '../component/Friends/Friends';
 import Nav from '../component/Nav/Nav';
 import { Route, Redirect } from 'react-router-dom';
 import PrivateRoute from '../component/PrivateRoute/PrivateRoute';
+import AddFriendForm from '../component/Form/AddFriendForm';
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
       {/* If I render LogIn I can't use useState */}
       <Redirect from='/' to='/login'/>
       <PrivateRoute exact path='/friends' component={Friends}/>
-
+      <PrivateRoute exact path='/make_new_friends' component={AddFriendForm}/>
     </div>
   );
 }

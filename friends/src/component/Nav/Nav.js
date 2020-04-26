@@ -9,6 +9,7 @@ const Nav = (props) => {
             <nav>
                 <NavLink to='/login'>Home</NavLink>
                 <NavLink to='/friends'>Friends</NavLink>
+                <NavLink to='/make_new_friends'>Add Friend</NavLink>
             </nav>
             
     </div>
