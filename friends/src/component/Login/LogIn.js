@@ -6,6 +6,7 @@ import { Button, Alert, Form, FormGroup, Input, Label } from "reactstrap";
 
 const LogIn = props => {
   const [data, setData] = useState({ username: "", password: "" });
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [message, setMessage] = useState("");
 
   const handleInputChange = e => {
@@ -22,6 +23,7 @@ const LogIn = props => {
       .post("http://localhost:5000/api/login", data)
       .then(res => {
         localStorage.setItem("token", res.data.payload);
+        setIsSignedIn(true);
         setMessage("You are logged in. Redirecting will take a few seconds");
         setTimeout(() => {
           props.history.push("/friends");
@@ -35,9 +37,7 @@ const LogIn = props => {
       <Form onSubmit={submitForm}>
         <h1>Sign In</h1>
         {message ? (
-          <Alert color={localStorage.getItem("token") ? "sucess" : "danger"}>
-            You are not allowed to enter.
-          </Alert>
+          <Alert color={isSignedIn ? "success" : "danger"}>{message}</Alert>
         ) : null}
         <FormGroup>
           <Label for="Username">Username</Label>
