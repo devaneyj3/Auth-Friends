@@ -1,0 +1,10 @@
+@import '../../mixins.scss';
+
+.friends-heading {
+    text-align: center;
+    margin: 5% 0;
+}
+.cards {
+    @include content-container;
+    flex-wrap: wrap;
+}
