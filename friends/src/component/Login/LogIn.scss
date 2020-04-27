@@ -1,0 +1,12 @@
+.LogIn {
+    display: flex;
+    border: 1px solid firebrick;
+    height: 500px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    form {
+        border-radius: 2rem;
+        padding: 2%;
+    }
+}

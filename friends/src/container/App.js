@@ -7,6 +7,8 @@ import { Route, Redirect } from 'react-router-dom';
 import PrivateRoute from '../component/PrivateRoute/PrivateRoute';
 import AddFriendForm from '../component/Form/AddFriendForm';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const App = () => {
   return (
     <div className='container'>
