@@ -7,7 +7,7 @@ const FriendList = props => {
       <h1>{props.name}</h1>
       <p>{props.age}</p>
       <p>{props.email}</p>
-      <button>Delete</button>
+      <button onClick={() => props.delete(props.id)}>Delete</button>
     </div>
   );
 };

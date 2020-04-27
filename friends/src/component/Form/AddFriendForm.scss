@@ -1,0 +1,9 @@
+@import '../../mixins.scss';
+
+.add-friend-form {
+    @include content-container;
+}
+
+.add-friend-header {
+    @include header;
+}

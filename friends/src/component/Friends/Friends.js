@@ -6,12 +6,21 @@ import FriendList from "../FriendList/FriendList";
 const Friends = props => {
   const [friends, setFriends] = useState([]);
 
+  const Delete = id => {
+    AxiosWithAuth()
+      .delete(`http://localhost:5000/api/friends/${id}`)
+      .then(res => {
+        setFriends([...friends]);
+      })
+      .catch(err => console.error(err));
+  };
+
   useEffect(() => {
     AxiosWithAuth()
       .get("http://localhost:5000/api/friends")
       .then(res => setFriends(res.data))
       .catch(err => console.error(err));
-  }, []);
+  }, [friends]);
   return (
     <>
       <section className="friends-heading">
@@ -25,6 +34,7 @@ const Friends = props => {
               name={friend.name}
               age={friend.age}
               email={friend.email}
+              delete={Delete}
             />
           );
         })}

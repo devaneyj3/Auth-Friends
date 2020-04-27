@@ -1,8 +1,7 @@
 @import '../../mixins.scss';
 
 .friends-heading {
-    text-align: center;
-    margin: 5% 0;
+    @include header;
 }
 .cards {
     @include content-container;
