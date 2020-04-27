@@ -3,11 +3,11 @@ import "./FriendList.scss";
 
 const FriendList = props => {
   return (
-    <div key={props.id} className="friend-card">
+    <div className="friend-card">
       <h1>{props.name}</h1>
       <p>{props.age}</p>
       <p>{props.email}</p>
-      <button onClick={() => props.delete(props.id)}>Delete</button>
+      <button onClick={() => props.delete(props.id, props.name)}>Delete</button>
     </div>
   );
 };
