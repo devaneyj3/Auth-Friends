@@ -1,0 +1,9 @@
+@import '../../mixins.scss';
+
+.friends-heading {
+    @include header;
+}
+.cards {
+    @include content-container;
+    flex-wrap: wrap;
+}
